@@ -1,25 +1,38 @@
 package br.com.fabio.java.io.teste;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
 public class TesteEscrita2 {
 	public static void main(String[] args) throws IOException {
 			//padrao de projeto decorator
 			//Fluxo de Saida com arquivo
-			//OutputStream fos = new FileOutputStream("lorem2.txt");//binario
-			//Writer osw = new OutputStreamWriter(fos);//trasforma os bytes em caracteres
-			//BufferedWriter bw = new BufferedWriter(osw);//junta os varios caracteres que estoa em uma linha.
-			//uso da classe filewrite para simplificar o codigo.
-			BufferedWriter bw = new BufferedWriter(new FileWriter("lorem2.txt"));
-			bw.write("Fabio ama a karla");
-			bw.newLine();
-			bw.write("Fabio ama a Arthur");
-			bw.newLine();
-			bw.write("Fabio ama a Kowalski");
+//			OutputStream fos = new FileOutputStream("lorem2.txt");//binario
+//			Writer osw = new OutputStreamWriter(fos);//trasforma os bytes em caracteres
+//			BufferedWriter bw = new BufferedWriter(osw);//junta os varios caracteres que estoa em uma linha.
 			
-			bw.close();
+			//imprime um fluxo de dados 
+			PrintStream ps = new PrintStream("lorem2.txt");
+			
+			//imprime um fluxo de caractres
+			PrintWriter pw = new PrintWriter("lorem2.txt");
+			
+			ps.println("Fabio amo a karla");
+			ps.println("Fabio amo a Arthur");
+			ps.println("Fabio amo a Kowalski");
+			
+			pw.println("1");
+			pw.println("2");
+			pw.println("3");
+			
+//			bw.write("Fabio amo a karla");
+//			bw.newLine();
+//			bw.write("Fabio amo a Arthur");
+//			bw.newLine();
+//			bw.write("Fabio amo a Kowalski");
+			
+			ps.close();
 			
 		
 	}
